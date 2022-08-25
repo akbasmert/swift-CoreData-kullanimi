@@ -14,6 +14,7 @@
 		4196CF1228B7E54D002F05E3 /* swift_CoreData_kullanimi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4196CF1028B7E54D002F05E3 /* swift_CoreData_kullanimi.xcdatamodeld */; };
 		4196CF1428B7E54F002F05E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4196CF1328B7E54F002F05E3 /* Assets.xcassets */; };
 		4196CF1728B7E54F002F05E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4196CF1528B7E54F002F05E3 /* LaunchScreen.storyboard */; };
+		4196CF1F28B7EB46002F05E3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196CF1E28B7EB46002F05E3 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4196CF1328B7E54F002F05E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4196CF1628B7E54F002F05E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4196CF1828B7E54F002F05E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4196CF1E28B7EB46002F05E3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				4196CF0728B7E54D002F05E3 /* AppDelegate.swift */,
 				4196CF0928B7E54D002F05E3 /* SceneDelegate.swift */,
 				4196CF0B28B7E54D002F05E3 /* ViewController.swift */,
+				4196CF1E28B7EB46002F05E3 /* DetailsViewController.swift */,
 				4196CF0D28B7E54D002F05E3 /* Main.storyboard */,
 				4196CF1328B7E54F002F05E3 /* Assets.xcassets */,
 				4196CF1528B7E54F002F05E3 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				4196CF1228B7E54D002F05E3 /* swift_CoreData_kullanimi.xcdatamodeld in Sources */,
 				4196CF0828B7E54D002F05E3 /* AppDelegate.swift in Sources */,
 				4196CF0A28B7E54D002F05E3 /* SceneDelegate.swift in Sources */,
+				4196CF1F28B7EB46002F05E3 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
