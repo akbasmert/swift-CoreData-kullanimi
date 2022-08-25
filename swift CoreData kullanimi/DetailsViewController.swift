@@ -16,12 +16,20 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(klavyeyiKapat))
+        
+        view.addGestureRecognizer(gestureRecognizer)// viewin kendisine atadık yani view e dokunulduğunu anlayacak.
 
-        // Do any additional setup after loading the view.
+   
     }
     
 
     @IBAction func kaydetButtonTiklandi(_ sender: Any) {
+    }
+    
+    @objc func klavyeyiKapat(){
+        view.endEditing(true)// KLAVYEYİ KAPATIYOR.
     }
     
 
