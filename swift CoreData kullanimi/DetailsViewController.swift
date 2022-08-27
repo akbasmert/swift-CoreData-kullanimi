@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -50,6 +51,30 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
     @IBAction func kaydetButtonTiklandi(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //AppDelegate dosyasındaki contxt e ulaştık.
+        
+        let alisveris = NSEntityDescription.insertNewObject(forEntityName: "Alisveris", into: context) //Coredatada oluşturduğumuz Alisveris tablosunu bağladık ve yukarıdaki  context i kullandık.
+        
+        alisveris.setValue(isimTextField.text!, forKey: "isim")
+        alisveris.setValue(bedenTextField.text!, forKey: "beden")
+        
+        if let fiyat = Int(fiyatTextField.text!){ // fiyat int ten farklı girilirse uygulama  çökmesin diye iflet kullandik
+            alisveris.setValue(fiyat, forKey: "fiyat")
+        }
+        
+        alisveris.setValue(UUID(), forKey: "id")//swift id yi belirleyecek
+        
+        let data = imageView.image!.jpegData(compressionQuality: 0.5) // fotoyu veritabanına 0.5 oranında sıkıştırarak kaydettik
+        alisveris.setValue(data, forKey: "gorsel")
+        
+        do{
+            try context.save()
+            print("kaydedildi")
+        }catch{
+            print("hata var ")
+        }
     }
     
     @objc func klavyeyiKapat(){
