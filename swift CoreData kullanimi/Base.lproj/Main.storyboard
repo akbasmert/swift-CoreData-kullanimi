@@ -48,26 +48,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-e4-rlR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ankara" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-e4-rlR">
                                 <rect key="frame" x="25" y="102" width="369" height="230"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ÜRÜN İSMİ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OpP-Vq-fuQ">
                                 <rect key="frame" x="25" y="369" width="369" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Yaw-gC-vQj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ÜRÜN FİYATI" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-Qb-CeB">
                                 <rect key="frame" x="25" y="416" width="369" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="JHf-aM-q56"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ÜRÜN  BEDENİ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJE-9n-eT7">
                                 <rect key="frame" x="25" y="469" width="369" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="vIZ-Gr-SXX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-v6-OX7">
                                 <rect key="frame" x="171" y="525" width="77" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wvN-nJ-Kng"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Kaydet">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
@@ -80,21 +92,21 @@
                         <viewLayoutGuide key="safeArea" id="VHE-47-NhD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="leading" secondItem="pJE-9n-eT7" secondAttribute="leading" id="7p0-Zs-kDI"/>
-                            <constraint firstItem="WnC-e4-rlR" firstAttribute="leading" secondItem="VHE-47-NhD" secondAttribute="leading" constant="25" id="8MY-NP-gDm"/>
-                            <constraint firstItem="pJE-9n-eT7" firstAttribute="centerX" secondItem="Wp6-v6-OX7" secondAttribute="centerX" id="HCP-GP-8Ya"/>
-                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="trailing" secondItem="Xip-Qb-CeB" secondAttribute="trailing" id="IUs-A9-dJg"/>
-                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="top" secondItem="OpP-Vq-fuQ" secondAttribute="bottom" constant="13" id="Pwy-F3-dXu"/>
-                            <constraint firstItem="WnC-e4-rlR" firstAttribute="trailing" secondItem="OpP-Vq-fuQ" secondAttribute="trailing" id="Vta-wB-CtV"/>
-                            <constraint firstItem="Wp6-v6-OX7" firstAttribute="top" secondItem="pJE-9n-eT7" secondAttribute="bottom" constant="22" id="Wdv-Db-col"/>
-                            <constraint firstItem="WnC-e4-rlR" firstAttribute="leading" secondItem="OpP-Vq-fuQ" secondAttribute="leading" id="eXu-aR-Dco"/>
-                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="trailing" secondItem="pJE-9n-eT7" secondAttribute="trailing" id="nw2-Of-tHq"/>
-                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="top" secondItem="WnC-e4-rlR" secondAttribute="bottom" constant="37" id="oHg-FY-sp9"/>
-                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="leading" secondItem="Xip-Qb-CeB" secondAttribute="leading" id="sIX-EH-nRM"/>
-                            <constraint firstItem="WnC-e4-rlR" firstAttribute="trailing" secondItem="zLc-4n-Wio" secondAttribute="trailingMargin" id="t9d-bg-yYk"/>
-                            <constraint firstItem="WnC-e4-rlR" firstAttribute="top" secondItem="VHE-47-NhD" secondAttribute="top" constant="14" id="xAF-Lm-c6r"/>
-                            <constraint firstItem="VHE-47-NhD" firstAttribute="bottom" secondItem="Wp6-v6-OX7" secondAttribute="bottom" constant="302" id="ygo-aX-LWB"/>
-                            <constraint firstItem="pJE-9n-eT7" firstAttribute="top" secondItem="Xip-Qb-CeB" secondAttribute="bottom" constant="19" id="zfQ-CA-77H"/>
+                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="trailing" secondItem="Xip-Qb-CeB" secondAttribute="trailing" id="0oh-ud-8K5"/>
+                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="leading" secondItem="Xip-Qb-CeB" secondAttribute="leading" id="3fS-Bh-iC0"/>
+                            <constraint firstItem="Wp6-v6-OX7" firstAttribute="top" secondItem="pJE-9n-eT7" secondAttribute="bottom" constant="22" id="62A-FH-b47"/>
+                            <constraint firstItem="WnC-e4-rlR" firstAttribute="leading" secondItem="VHE-47-NhD" secondAttribute="leading" constant="25" id="FRV-ud-ysQ"/>
+                            <constraint firstItem="OpP-Vq-fuQ" firstAttribute="top" secondItem="WnC-e4-rlR" secondAttribute="bottom" constant="37" id="RYm-96-bVw"/>
+                            <constraint firstItem="pJE-9n-eT7" firstAttribute="centerX" secondItem="Wp6-v6-OX7" secondAttribute="centerX" id="WCb-0y-CG0"/>
+                            <constraint firstItem="WnC-e4-rlR" firstAttribute="trailing" secondItem="OpP-Vq-fuQ" secondAttribute="trailing" id="ZqP-UA-4m1"/>
+                            <constraint firstItem="WnC-e4-rlR" firstAttribute="leading" secondItem="OpP-Vq-fuQ" secondAttribute="leading" id="bZC-e5-QBA"/>
+                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="trailing" secondItem="pJE-9n-eT7" secondAttribute="trailing" id="cXY-rs-RaV"/>
+                            <constraint firstItem="VHE-47-NhD" firstAttribute="bottom" secondItem="Wp6-v6-OX7" secondAttribute="bottom" constant="302" id="hir-jJ-zzq"/>
+                            <constraint firstItem="WnC-e4-rlR" firstAttribute="trailing" secondItem="zLc-4n-Wio" secondAttribute="trailingMargin" id="lQj-Db-rO8"/>
+                            <constraint firstItem="pJE-9n-eT7" firstAttribute="top" secondItem="Xip-Qb-CeB" secondAttribute="bottom" constant="19" id="p9c-UX-8Qs"/>
+                            <constraint firstItem="WnC-e4-rlR" firstAttribute="top" secondItem="VHE-47-NhD" secondAttribute="top" constant="14" id="pVy-ur-Rm8"/>
+                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="top" secondItem="OpP-Vq-fuQ" secondAttribute="bottom" constant="13" id="qtI-uY-ZnB"/>
+                            <constraint firstItem="Xip-Qb-CeB" firstAttribute="leading" secondItem="pJE-9n-eT7" secondAttribute="leading" id="ySE-if-ePL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sRp-gX-Tb0"/>
@@ -129,6 +141,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ankara" width="700" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
