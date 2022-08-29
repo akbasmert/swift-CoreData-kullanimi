@@ -46,16 +46,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         do{
             let sonuclar =   try context.fetch(fetchRequest)
-            for sonuc in sonuclar as! [NSManagedObject]{
+            
+            if sonuclar.count > 0 {
                 
-                if let isim = sonuc.value(forKey: "isim") as? String{
-                    isimDizisi.append(isim)
+                for sonuc in sonuclar as! [NSManagedObject]{
+                    
+                    if let isim = sonuc.value(forKey: "isim") as? String{
+                        isimDizisi.append(isim)
+                    }
+                    if let id = sonuc.value(forKey: "id") as? UUID{
+                        idDizisi.append(id)
+                    }
                 }
-                if let id = sonuc.value(forKey: "id") as? UUID{
-                    idDizisi.append(id)
-                }
+                tableView.reloadData() // Tableview a ben dataları değiştirdim hadi güncelle dedik:)
             }
-            tableView.reloadData() // Tableview a ben dataları değiştirdim hadi güncelle dedik:)
+            
         }catch{
             print("hata var ")
         }

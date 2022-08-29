@@ -25,8 +25,40 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         if secilenUrunIsmi != "" {
             
             if let  uuidString = secilenUrunUUID?.uuidString { // seçilen urunuuıd sini optionalden string e çevirdik.
-                
                 print(uuidString)
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Alisveris")
+                fetchRequest.predicate = NSPredicate(format: "id = %@", uuidString) // id si uuidString e eşit olanları getir demek
+                fetchRequest.returnsObjectsAsFaults = false
+                
+                do{
+                    let sonuclar = try context.fetch(fetchRequest)
+                    
+                    if sonuclar.count > 0 {
+                        for sonuc in sonuclar as! [NSManagedObject]{
+                            
+                            if let isim = sonuc.value(forKey: "isim") as? String{
+                                isimTextField.text = isim
+                            }
+                            if let fiyat = sonuc.value(forKey: "fiyat") as? Int{
+                                fiyatTextField.text = String(fiyat)
+                            }
+                            if let beden = sonuc.value(forKey: "beden") as? String{
+                                bedenTextField.text = beden
+                            }
+                            if let gorselData = sonuc.value(forKey: "gorsel") as? Data {
+                                let image = UIImage(data: gorselData)
+                                imageView.image = image
+                            }
+                            
+                        }
+                    }
+                }catch{
+                    print("hata var ")
+                }
             }
             
         }else{
