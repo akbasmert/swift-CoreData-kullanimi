@@ -24,6 +24,8 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if secilenUrunIsmi != "" {
             
+            kaydetButton.isHidden = true // kaydet butonu gizledik.
+            
             if let  uuidString = secilenUrunUUID?.uuidString { // seçilen urunuuıd sini optionalden string e çevirdik.
                 print(uuidString)
                 
@@ -62,6 +64,9 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
             
         }else{
+            
+            kaydetButton.isHidden = false // kaydet butonu gizlemedik.
+            kaydetButton.isEnabled = false // gorsel secmeden tıklanmsın diye silik hale getirdik
             isimTextField.text = ""
             fiyatTextField.text = ""
             bedenTextField.text = ""
@@ -96,10 +101,12 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
     // didfinished yazarak bu fonksiyonu getirdik kullanıcı foto seçmini yaptıktan sonra olaacakları işliyoruz.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage // kasting işlemi yaptık kullnıcı foto seçiminden vazgeçerse uygulama çökmeyecek. .original image diyerek orijinal fotoyu aldık bunu değiştirebiliriz
+        kaydetButton.isEnabled = true
         self.dismiss(animated: true, completion: nil)
     }
     
 
+    @IBOutlet weak var kaydetButton: UIButton!
     @IBAction func kaydetButtonTiklandi(_ sender: Any) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
