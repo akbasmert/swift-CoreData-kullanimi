@@ -14,6 +14,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var isimDizisi = [String]()
     var idDizisi = [UUID]()
+    var secilenIsim = ""
+    var secilenUUID : UUID?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
    @objc func eklemeButonutiklandi(){
+       secilenIsim = ""
         
        performSegue(withIdentifier: "toDetailsVC", sender: nil)
         
@@ -72,6 +76,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = UITableViewCell()
         cell.textLabel?.text = isimDizisi[indexPath.row]
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsViewController
+            destinationVC.secilenUrunIsmi = secilenIsim
+            destinationVC.secilenUrunUUID = secilenUUID
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        secilenIsim = isimDizisi[indexPath.row]
+        secilenUUID = idDizisi[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
 
 
