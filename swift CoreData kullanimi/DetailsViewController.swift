@@ -75,6 +75,8 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         }catch{
             print("hata var ")
         }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "veriGirildi"), object: nil)// veri girildiğinde mesaj göndereceğiz.
+        self.navigationController?.popViewController(animated: true) // verileri alınca sayfaya geri gidiyor.
     }
     
     @objc func klavyeyiKapat(){

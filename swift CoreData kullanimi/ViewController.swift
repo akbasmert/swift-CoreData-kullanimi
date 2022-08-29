@@ -26,8 +26,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         verileriAl()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector:#selector(verileriAl), name: NSNotification.Name(rawValue: "veriGirildi"), object: nil)
+    }
     
-    func verileriAl(){
+    
+    @objc func verileriAl(){
+        
+        isimDizisi.removeAll(keepingCapacity: false)//tableview gösterilen ürünlerin tekrarını önlemek için yaptık.
+        idDizisi.removeAll(keepingCapacity: false)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -49,6 +56,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }catch{
             print("hata var ")
         }
+      
+        
     }
     
    @objc func eklemeButonutiklandi(){
