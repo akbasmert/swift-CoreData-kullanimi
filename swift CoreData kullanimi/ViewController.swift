@@ -96,6 +96,46 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         secilenUUID = idDizisi[indexPath.row]
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Alisveris")
+            let uuidString = idDizisi[indexPath.row].uuidString
+            fetchRequest.predicate = NSPredicate(format: "id = %@", uuidString) // id si uuidString e eşit olanları getir demek
+            fetchRequest.returnsObjectsAsFaults = false
+            do{
+                let sonuclar = try context.fetch(fetchRequest)
+                
+                if sonuclar.count > 0 {
+                    for sonuc in sonuclar as! [NSManagedObject]{
+                    
+                        if let id = sonuc.value(forKey: "id") as? UUID{
+                            if id == idDizisi[indexPath.row]{ // id seçilen id mi diye son bir kontrol ettik.
+                                context.delete(sonuc)
+                                isimDizisi.remove(at: indexPath.row)
+                                idDizisi.remove(at: indexPath.row)
+                                self.tableView.reloadData()
+                                do{
+                                    try context.save()
+                                }catch{
+                                    print("hata")
+                                }
+                                
+                                break
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }catch{
+                print("hata")
+            }
+        }
+    }
 
 
 }
